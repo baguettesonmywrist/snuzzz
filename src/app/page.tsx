@@ -85,30 +85,30 @@ export default function Home() {
       </Button>
 
       <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
-        <Card className="p-4">
+        <Card className="p-4 flex flex-col h-[180px]">
           <CardHeader>
-            <CardTitle className="text-lg text-center font-semibold mb-2 w-[120px]">
+            <CardTitle className="text-lg text-center font-semibold mb-2">
               Wake Up Time
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex-grow flex items-center justify-center">
             <Input
               id="wakeUpTime"
               type="time"
               value={wakeUpTime}
               onChange={(e) => setWakeUpTime(e.target.value)}
-              className="mb-4 [&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
+              className="[&::-webkit-calendar-picker-indicator]:filter [&::-webkit-calendar-picker-indicator]:invert"
             />
           </CardContent>
         </Card>
 
-        <Card className="p-4">
+        <Card className="p-4 flex flex-col h-[180px]">
           <CardHeader>
-            <CardTitle className="text-lg text-center font-semibold mb-2 w-[120px] h-[80px]">
+            <CardTitle className="text-lg text-center font-semibold mb-2">
               Sleep By
             </CardTitle>
           </CardHeader>
-          <CardContent>
+          <CardContent className="flex-grow flex items-center justify-center">
             <p className="text-2xl font-bold text-center">
               {calculateSleepBy(wakeUpTime)}
             </p>
